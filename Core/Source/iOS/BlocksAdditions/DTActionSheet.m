@@ -56,6 +56,10 @@
 	return self;
 }
 
++(DTActionSheet *)actionSheetWithTitle:(NSString *)title {
+    return [[self alloc] initWithTitle:title];
+}
+
 - (void)dealloc
 {
 	_isDeallocating = YES;
@@ -74,7 +78,7 @@
 	return retIndex;
 }
 
-- (NSInteger)addDestructiveButtonWithTitle:(NSString *)title block:(DTActionSheetBlock)block
+- (NSInteger)setDestructiveButtonWithTitle:(NSString *)title block:(DTActionSheetBlock)block
 {
 	NSInteger retIndex = [self addButtonWithTitle:title block:block];
 	[self setDestructiveButtonIndex:retIndex];
@@ -82,9 +86,9 @@
 	return retIndex;
 }
 
-- (NSInteger)addCancelButtonWithTitle:(NSString *)title
+- (NSInteger)setCancelButtonWithTitle:(NSString *)title block:(DTActionSheetBlock)block
 {
-	NSInteger retIndex = [self addButtonWithTitle:title];
+	NSInteger retIndex = [self addButtonWithTitle:title block:block];
 	[self setCancelButtonIndex:retIndex];
 	
 	return retIndex;

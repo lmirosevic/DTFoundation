@@ -22,6 +22,12 @@ typedef void (^DTActionSheetBlock)(void);
 - (id)initWithTitle:(NSString *)title;
 
 /**
+ Allocated and initializes the action sheet using the specified title.
+ @param title The title
+ */
++(DTActionSheet *)actionSheetWithTitle:(NSString *)title;
+
+/**
  Adds a custom button to the action sheet.
  @param title The title of the new button.
  @param block The block to execute when the button is tapped.
@@ -36,16 +42,18 @@ typedef void (^DTActionSheetBlock)(void);
  @param title The title of the new button.
  @param block The block to execute when the button is tapped.
  @returns The index of the new button. Button indices start at 0 and increase in the order they are added.
- */ 
-- (NSInteger)addDestructiveButtonWithTitle:(NSString *)title block:(DTActionSheetBlock)block;
+ */
+- (NSInteger)setDestructiveButtonWithTitle:(NSString *)title block:(DTActionSheetBlock)block;
+
 
 /**
  Adds a custom cancel button to the action sheet.
  
  Since there can only be one cancel button a previously marked cancel button becomes a normal button.
  @param title The title of the new button.
+ @param block The block to execute when the button is tapped.
  @returns The index of the new button. Button indices start at 0 and increase in the order they are added.
  */ 
-- (NSInteger)addCancelButtonWithTitle:(NSString *)title;
+- (NSInteger)setCancelButtonWithTitle:(NSString *)title block:(DTActionSheetBlock)block;
 
 @end
