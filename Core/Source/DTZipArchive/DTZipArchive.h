@@ -90,6 +90,8 @@ extern NSString * const DTZipArchiveErrorDomain;
  */
 @property (nonatomic, readonly) NSArray *nodes;
 
+@property (nonatomic, readonly) NSArray *listOfEntries;
+
 @end
 
 

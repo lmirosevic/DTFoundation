@@ -130,6 +130,7 @@ NSString * const DTZipArchiveErrorDomain = @"DTZipArchive";
 #pragma mark - Properties
 
 @synthesize path;
+@synthesize listOfEntries = _listOfEntries;
 
 @end
 

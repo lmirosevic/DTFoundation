@@ -24,22 +24,24 @@
 
 @implementation DTZipArchivePKZip
 {
-    /**
-     Total size of all files uncompressed
-     */
-    long long _totalSize;
-
-    /**
-     Includes files only
-     */
-    long long _totalNumberOfFiles;
-
-    /**
-     Includes files and folders
-     */
-    long long _totalNumberOfItems;
-
-    NSString *_path;
+	/**
+	 Total size of all files uncompressed
+	 */
+	long long _totalSize;
+	
+	/**
+	 Includes files only
+	 */
+	long long _totalNumberOfFiles;
+	
+	/**
+	 Includes files and folders
+	 */
+	long long _totalNumberOfItems;
+	
+	NSString *_path;
+	
+	unzFile _unzFile;
 }
 
 - (id)initWithFileAtPath:(NSString *)sourcePath
@@ -51,6 +53,9 @@
         self.path = sourcePath;
         
         [self _buildIndex];
+		 
+		 // select given file in PKZip
+		_unzFile = unzOpen([_path UTF8String]);
     }
 
     return self;
@@ -392,8 +397,7 @@
 		return nil;
 	}
 	
-	// select given file in PKZip
-	unzFile _unzFile = unzOpen([_path UTF8String]);
+
 	
 	if (unzLocateFile(_unzFile, [node.name UTF8String], 1) != UNZ_OK)
 	{
