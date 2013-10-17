@@ -1,10 +1,10 @@
 Pod::Spec.new do |spec|
   spec.name         = 'DTFoundation-Goonbee'
-  spec.version      = '2.0.1'
-  spec.summary      = "Standard toolset classes and categories."
-  spec.homepage     = "https://github.com/Cocoanetics/DTFoundation"
-  spec.author       = { "Oliver Drobnik" => "oliver@drobnik.com" }
-  spec.source       = { :git => "https://github.com/Cocoanetics/DTFoundation.git", :tag => spec.version.to_s }
+  spec.version      = '2.0.2'
+  spec.summary      = "Fork of Oliver Drobnik's DTFoundation"
+  spec.homepage     = "https://github.com/lmirosevic/DTFoundation"
+  spec.author       = { "Luka Mirosevic" => "luka@goonbee.com" }
+  spec.source       = { :git => "https://github.com/lmirosevic/DTFoundation.git", :tag => spec.version.to_s }
   spec.license      = 'BSD'
   spec.requires_arc = true
   spec.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h'
