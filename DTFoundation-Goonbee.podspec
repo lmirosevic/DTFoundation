@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
-  spec.name         = 'DTFoundation'
-  spec.version      = '2.0.0'
+  spec.name         = 'DTFoundation-Goonbee'
+  spec.version      = '2.0.1'
   spec.summary      = "Standard toolset classes and categories."
   spec.homepage     = "https://github.com/Cocoanetics/DTFoundation"
   spec.author       = { "Oliver Drobnik" => "oliver@drobnik.com" }
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'UIKit' do |ss|
     ss.platform = :ios, '4.3'
-    ss.dependency 'DTFoundation/Core'
+    ss.dependency 'DTFoundation-Goonbee/Core'
     ss.ios.frameworks = 'QuartzCore'
     ss.ios.source_files = 'Core/Source/iOS/*.{h,m}'
     ss.ios.public_header_files = 'Core/Source/iOS/*.h'
@@ -26,14 +26,14 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'UIKit_BlocksAdditions' do |ss|
     ss.platform = :ios, '4.3'
-    ss.dependency 'DTFoundation/Core'
+    ss.dependency 'DTFoundation-Goonbee/Core'
     ss.ios.source_files = 'Core/Source/iOS/BlocksAdditions/*.{h,m}'
     ss.ios.public_header_files = 'Core/Source/iOS/BlocksAdditions/*.h'
   end
 
   spec.subspec 'AppKit' do |ss|
     ss.platform = :osx, '10.6'
-    ss.dependency 'DTFoundation/Core'
+    ss.dependency 'DTFoundation-Goonbee/Core'
     ss.osx.source_files = 'Core/Source/OSX/*.{h,m}'
     ss.osx.public_header_files = 'Core/Source/OSX/*.h'
   end
@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'DTAWS' do |ss|
     ss.ios.deployment_target = '4.3'
     ss.osx.deployment_target = '10.6'
-    ss.dependency 'DTFoundation/Core'
+    ss.dependency 'DTFoundation-Goonbee/Core'
     ss.source_files = 'Core/Source/DTAWS/*.{h,m}'
     ss.public_header_files = 'Core/Source/DTAWS/*.h'
   end
@@ -49,14 +49,14 @@ Pod::Spec.new do |spec|
   spec.subspec 'DTASN1' do |ss|
     ss.ios.deployment_target = '4.3'
     ss.osx.deployment_target = '10.6'
-    ss.dependency 'DTFoundation/Core'
+    ss.dependency 'DTFoundation-Goonbee/Core'
     ss.source_files = 'Core/Source/DTASN1/*.{h,m}'
     ss.public_header_files = 'Core/Source/DTASN1/*.h'
   end
 
   spec.subspec 'DTSidePanel' do |ss|
     ss.platform = :ios, '5.0'
-    ss.dependency 'DTFoundation/UIKit'
+    ss.dependency 'DTFoundation-Goonbee/UIKit'
     ss.ios.frameworks = 'QuartzCore'
     ss.ios.source_files = 'Core/Source/iOS/DTSidePanel/*.{h,m}'
     ss.ios.public_header_files = 'Core/Source/iOS/DTSidePanel/*.h'
@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'DTHTMLParser' do |ss|
     ss.ios.deployment_target = '4.3'
-    ss.dependency 'DTFoundation/Core'
+    ss.dependency 'DTFoundation-Goonbee/Core'
     ss.source_files = 'Core/Source/DTHTMLParser/*.{h,m}'
     ss.public_header_files = 'Core/Source/DTHTMLParser/*.h'
     ss.library = 'xml2'
