@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'DTFoundation-Goonbee'
-  spec.version      = '2.0.3'
+  spec.version      = '2.0.6'
   spec.summary      = "Fork of Oliver Drobnik's DTFoundation"
   spec.homepage     = "https://github.com/lmirosevic/DTFoundation"
   spec.author       = { "Luka Mirosevic" => "luka@goonbee.com" }
@@ -8,11 +8,13 @@ Pod::Spec.new do |spec|
   spec.license      = 'BSD'
   spec.requires_arc = true
 
+  s.public_header_files = 'DTFoundation.h'
+
   spec.subspec 'Core' do |ss|
     ss.ios.deployment_target = '4.3'
     ss.osx.deployment_target = '10.6'
     ss.source_files = 'Core/Source/*.{h,m}'
-    ss.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h'
+    ss.public_header_files = 'DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h'
   end
 
   spec.subspec 'UIKit' do |ss|
