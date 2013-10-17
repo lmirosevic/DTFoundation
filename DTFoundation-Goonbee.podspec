@@ -1,21 +1,24 @@
 Pod::Spec.new do |spec|
   spec.name         = 'DTFoundation-Goonbee'
-  spec.version      = '2.0.4'
+  spec.version      = '2.0.5'
   spec.summary      = "Fork of Oliver Drobnik's DTFoundation"
   spec.homepage     = "https://github.com/lmirosevic/DTFoundation"
   spec.author       = { "Luka Mirosevic" => "luka@goonbee.com" }
-  spec.source       = { :git => "https://github.com/lmirosevic/DTFoundation.git", :tag => spec.version.to_s }
+  spec.source       = { :git => "https://github.com/lmirosevic/DTFoundation.git", :tag => '2.0.5' }
   spec.license      = 'BSD'
   spec.requires_arc = true
 
-  spec.ios.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h'
-  spec.osx.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h'
+  spec.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
+  spec.ios.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
+  spec.osx.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
 
   spec.subspec 'Core' do |ss|
     ss.ios.deployment_target = '4.3'
     ss.osx.deployment_target = '10.6'
     ss.source_files = 'Core/Source/*.{h,m}'
-    ss.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h'
+    ss.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
+    ss.ios.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
+    ss.osx.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
   end
 
   spec.subspec 'UIKit' do |ss|
@@ -23,7 +26,12 @@ Pod::Spec.new do |spec|
     ss.dependency 'DTFoundation-Goonbee/Core'
     ss.ios.frameworks = 'QuartzCore'
     ss.ios.source_files = 'Core/Source/iOS/*.{h,m}'
-    ss.ios.public_header_files = 'Core/Source/iOS/*.h'
+    # ss.ios.public_header_files = 'Core/Source/iOS/*.h'
+
+
+    ss.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
+    ss.ios.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h', 'Core/Source/iOS/*.h'
+    ss.osx.public_header_files = 'Core/DTFoundation.h', 'Core/Source/Runtime/*.h', 'Core/Source/*.h', 'DTFoundation.h', 'Source/Runtime/*.h'
   end
 
   spec.subspec 'UIKit_BlocksAdditions' do |ss|
