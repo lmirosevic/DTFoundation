@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'DTFoundation-Goonbee'
-  spec.version      = '2.0.6'
+  spec.version      = '2.0.7'
   spec.summary      = "Fork of Oliver Drobnik's DTFoundation"
   spec.homepage     = "https://github.com/lmirosevic/DTFoundation"
   spec.author       = { "Luka Mirosevic" => "luka@goonbee.com" }
